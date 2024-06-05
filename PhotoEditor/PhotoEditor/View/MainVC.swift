@@ -11,6 +11,12 @@ import UIKit
 final class MainVC: UIViewController {
     let viewModel = MainViewModel()
     let filterControl = UISegmentedControl(items: ["Original", "Black&White"])
+    
+    private let imageViewLogo: UIImageView = {
+        let imageViewLogo = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        imageViewLogo.image = UIImage(named: "logo")
+        return imageViewLogo
+    }()
 
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -49,11 +55,39 @@ final class MainVC: UIViewController {
         setupNavigationBar()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        imageViewLogo.center = view.center
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.animate()
+        }
+    }
+    
+    private func animate() {
+        UIView.animate(withDuration: 1, animations: {
+            let size = self.view.frame.size.width * 3
+            let diffX = size - self.view.frame.size.width
+            let diffY = self.view.frame.size.height - size
+            
+            self.imageViewLogo.frame = CGRect(
+                x: -(diffX/2),
+                y: diffY/2,
+                width: size,
+                height: size
+            )
+            UIView.animate(withDuration: 1.5, animations: {
+                self.imageViewLogo.alpha = 0
+            })
+        })
+    }
+    
     private func setupUI() {
         view.backgroundColor = .gray
         view.addSubview(frameView)
         view.addSubview(addButton)
         frameView.addSubview(imageView)
+        view.addSubview(imageViewLogo)
         
         addButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
