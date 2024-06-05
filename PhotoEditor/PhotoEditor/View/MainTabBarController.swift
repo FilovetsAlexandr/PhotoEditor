@@ -7,8 +7,7 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
-
+final class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         generateTabBar()
@@ -23,9 +22,10 @@ class MainTabBarController: UITabBarController {
     }
     
     private func generateVC(viewController: UIViewController, title: String, image: UIImage?) -> UIViewController {
-        viewController.tabBarItem.title = title
-        viewController.tabBarItem.image = image
-        return viewController
+        let navController = UINavigationController(rootViewController: viewController)
+        navController.tabBarItem.title = title
+        navController.tabBarItem.image = image
+        return navController
     }
     
     private func setTabBarApperance() {
@@ -53,4 +53,3 @@ class MainTabBarController: UITabBarController {
         tabBar.unselectedItemTintColor = .tabBarItemLight
     }
 }
-

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4577F2E2C0F604F0070BFCC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4577F2D2C0F604F0070BFCC /* SnapKit */; };
 		F4E446F52C0F32C300A9251C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E446F42C0F32C300A9251C /* AppDelegate.swift */; };
 		F4E446F72C0F32C300A9251C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E446F62C0F32C300A9251C /* SceneDelegate.swift */; };
 		F4E446F92C0F32C300A9251C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E446F82C0F32C300A9251C /* MainTabBarController.swift */; };
@@ -15,6 +16,9 @@
 		F4E447092C0F377800A9251C /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E447082C0F377700A9251C /* MainVC.swift */; };
 		F4E4470B2C0F378800A9251C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4470A2C0F378800A9251C /* SettingsVC.swift */; };
 		F4E4470D2C0F3BD000A9251C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4470C2C0F3BCF00A9251C /* UIColorExtension.swift */; };
+		F4E4471A2C0F4B1900A9251C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E447192C0F4B1900A9251C /* MainViewModel.swift */; };
+		F4E4471C2C0F4BDD00A9251C /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4471B2C0F4BDD00A9251C /* Observable.swift */; };
+		F4E4471E2C0F4E4400A9251C /* MainVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4471D2C0F4E4400A9251C /* MainVCExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,9 @@
 		F4E447082C0F377700A9251C /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		F4E4470A2C0F378800A9251C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		F4E4470C2C0F3BCF00A9251C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F4E447192C0F4B1900A9251C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		F4E4471B2C0F4BDD00A9251C /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		F4E4471D2C0F4E4400A9251C /* MainVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4577F2E2C0F604F0070BFCC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,17 +68,68 @@
 		F4E446F32C0F32C300A9251C /* PhotoEditor */ = {
 			isa = PBXGroup;
 			children = (
-				F4E4470C2C0F3BCF00A9251C /* UIColorExtension.swift */,
-				F4E446F42C0F32C300A9251C /* AppDelegate.swift */,
-				F4E446F62C0F32C300A9251C /* SceneDelegate.swift */,
-				F4E446F82C0F32C300A9251C /* MainTabBarController.swift */,
-				F4E446FD2C0F32C400A9251C /* Assets.xcassets */,
-				F4E446FF2C0F32C400A9251C /* LaunchScreen.storyboard */,
+				F4E447162C0F48B200A9251C /* Extensions */,
+				F4E447152C0F48AA00A9251C /* Model */,
+				F4E447142C0F48A100A9251C /* ViewModel */,
+				F4E447172C0F48C600A9251C /* Delegates */,
+				F4E447132C0F489000A9251C /* View */,
+				F4E447182C0F48D500A9251C /* Resources */,
 				F4E447022C0F32C400A9251C /* Info.plist */,
+			);
+			path = PhotoEditor;
+			sourceTree = "<group>";
+		};
+		F4E447132C0F489000A9251C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4E446FF2C0F32C400A9251C /* LaunchScreen.storyboard */,
+				F4E446F82C0F32C300A9251C /* MainTabBarController.swift */,
 				F4E447082C0F377700A9251C /* MainVC.swift */,
 				F4E4470A2C0F378800A9251C /* SettingsVC.swift */,
 			);
-			path = PhotoEditor;
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4E447142C0F48A100A9251C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4E447192C0F4B1900A9251C /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4E447152C0F48AA00A9251C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4E4471B2C0F4BDD00A9251C /* Observable.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4E447162C0F48B200A9251C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F4E4470C2C0F3BCF00A9251C /* UIColorExtension.swift */,
+				F4E4471D2C0F4E4400A9251C /* MainVCExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F4E447172C0F48C600A9251C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				F4E446F42C0F32C300A9251C /* AppDelegate.swift */,
+				F4E446F62C0F32C300A9251C /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		F4E447182C0F48D500A9251C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F4E446FD2C0F32C400A9251C /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +148,9 @@
 			dependencies = (
 			);
 			name = PhotoEditor;
+			packageProductDependencies = (
+				F4577F2D2C0F604F0070BFCC /* SnapKit */,
+			);
 			productName = PhotoEditor;
 			productReference = F4E446F12C0F32C300A9251C /* PhotoEditor.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +179,9 @@
 				Base,
 			);
 			mainGroup = F4E446E82C0F32C300A9251C;
+			packageReferences = (
+				F4577F2C2C0F604F0070BFCC /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F4E446F22C0F32C300A9251C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,6 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E4471C2C0F4BDD00A9251C /* Observable.swift in Sources */,
+				F4E4471E2C0F4E4400A9251C /* MainVCExtension.swift in Sources */,
+				F4E4471A2C0F4B1900A9251C /* MainViewModel.swift in Sources */,
 				F4E446F92C0F32C300A9251C /* MainTabBarController.swift in Sources */,
 				F4E447092C0F377800A9251C /* MainVC.swift in Sources */,
 				F4E446F52C0F32C300A9251C /* AppDelegate.swift in Sources */,
@@ -218,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -369,6 +437,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4577F2C2C0F604F0070BFCC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4577F2D2C0F604F0070BFCC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4577F2C2C0F604F0070BFCC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F4E446E92C0F32C300A9251C /* Project object */;
 }
